@@ -7,3 +7,4 @@ pdf: prepare
 
 prepare:
 	@echo "Preparing ..."
+	@cat `find . -name "*.markdown" | sort` > thesis.md
