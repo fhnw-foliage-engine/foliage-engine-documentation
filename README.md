@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/livioso/pandoc-travis-setup.svg)](https://travis-ci.org/livioso/pandoc-travis-setup)
+[![Build Status](https://travis-ci.org/fhnw-foliage-engine/foliage-engine-documentation.svg?branch=master)](https://travis-ci.org/fhnw-foliage-engine/foliage-engine-documentation)
 
 ### Pandoc on Travis - an example setup.
 
