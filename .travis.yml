@@ -1,11 +1,13 @@
+sudo: false # use containers
+
+addons:
+  apt_packages:
+    - pandoc
+
 before_install:
-- sudo apt-get update -qq
-- sudo apt-get install -y pandoc
-- wget https://github.com/scottkosty/install-tl-ubuntu/raw/master/install-tl-ubuntu
-- chmod u+x ./install-tl-ubuntu
+- tar -xf ./travis/texlive2015.tar
 - chmod u+x ./travis/build.sh
 - chmod u+x ./travis/publish.sh
-- sudo ./install-tl-ubuntu
 
 script: "./travis/build.sh"
 
