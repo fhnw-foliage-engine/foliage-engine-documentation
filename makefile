@@ -10,7 +10,6 @@ pdf: prepare
 		--csl assets/ieee.csl \
 		--highlight-style=tango \
 		--table-of-contents \
-		--toc-depth=4 \
     --variable documentclass=article \
     --variable fontsize=13pt \
     --variable mainfont='Helvetica Neue' \
