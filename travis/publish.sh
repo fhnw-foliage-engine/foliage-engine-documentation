@@ -13,7 +13,7 @@ echo '---- Switch to gh-pages branch ----'
 git checkout gh-pages
 
 echo '---- Copy latest PDF build ----'
-mkdir -p dist
+mkdir -p dist/
 cp $RESULT_PDF_PATH ./dist/${TRAVIS_BRANCH}-thesis.pdf
 
 echo '---- Set git settings ----'

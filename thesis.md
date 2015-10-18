@@ -7,69 +7,63 @@
 \begin{figure}[!htb]
 \begin{center}
 
-\begin{ganttchart}[y unit title=0.4cm,
-y unit chart=0.5cm,
-vgrid,hgrid, 
-title label anchor/.style={below=-1.6ex},
-title left shift=.05,
-title right shift=-.05,
-title height=1,
-bar/.style={fill=gray!50},
-incomplete/.style={fill=white},
-progress label text={},
-bar height=0.7,
-group right shift=0,
-group top shift=.6,
-group height=.3,
-group peaks={}{}{.2}]{20}
-
-%labels
-\gantttitle{IP5 - Foliage Engine}{20} \\
-\gantttitle{September}{4} 
-\gantttitle{October}{4} 
-\gantttitle{November}{4} 
-\gantttitle{Dezember}{4} 
-\gantttitle{Januar}{4} \\
-
-%tasks
-\ganttgroup{Documentation}{3}{18}
-\ganttnewline
-\ganttgroup{Project Week}{12}{12}
-\ganttnewline
-\ganttgroup{Holiday}{16}{17}
-\ganttnewline
-\ganttnewline
-\ganttbar[progress=100]{Initial Analysis}{3}{4} \\
-\ganttnewline
-\ganttbar{Billboard - Initial}{5}{8} \\
-\ganttmilestone{Milestone-1}{8}
-\ganttnewline
-\ganttnewline
-\ganttbar{Billboard - Finalize}{9}{11} \\
-\ganttbar{Octree Optimization}{9}{11} \\
-\ganttnewline
-\ganttmilestone{Milestone-2}{11}
-\ganttnewline
-\ganttbar{Dynamic Scene Graph}{12}{15} \\
-\ganttmilestone{Milestone-3}{15}
-\ganttnewline
-\ganttnewline
-\ganttbar{Buffer}{18}{18} \\
-\ganttmilestone{Final Presentation}{18} \\
-
-%relations 
-\ganttlink{elem3}{elem4}
-\ganttlink{elem4}{elem5}
-\ganttlink{elem5}{elem6}
-\ganttlink{elem5}{elem7}
-\ganttlink{elem6}{elem8}
-\ganttlink{elem7}{elem8}  
-\ganttlink{elem8}{elem9}
-\ganttlink{elem9}{elem10}
-\ganttlink{elem10}{elem11}
-\ganttlink{elem11}{elem12}
-
+\begin{ganttchart}[
+    y unit title=0.5cm,
+    y unit chart=0.6cm,
+    time slot format=isodate-yearmonth,
+    compress calendar,
+    title/.append style={shape=rectangle, fill=black!10},
+    title height=1,
+    bar/.append style={fill=green!90},
+    bar height=.6,
+    bar label font=\normalsize\color{black!50},
+    group top shift=.6,
+    group height=.3,
+    group peaks height=.2,
+    bar incomplete/.append style={fill=green!40}
+  ]{2015-05}{2017-06}
+  \gantttitlecalendar{year} \\
+  \gantttitlecalendar{month} \\
+  \ganttset{progress label text={},
+       bar incomplete/.append style={fill=green!40},
+       group/.append style={draw=black, fill=green},} % this suppresses percentage done labels
+  \ganttgroup{Aim 1: Phenotypes}{2015-06}{2015-12} \\
+    \ganttbar[progress=00, name=rclone]{R cloning}{2015-06}{2015-07} \\
+    \ganttlinkedbar[progress=00, name=rflr]{R fluorescence}{2015-07}{2015-09} \\
+    \ganttlinkedbar[progress=00, name=rqpcr]{R RT-qPCR}{2015-10}{2015-11} \\
+    \ganttbar[progress=00, name=kover]{KO verification}{2015-06}{2015-07} \\
+    \ganttlinkedbar[progress=00, name=kogro]{KO growth}{2015-08}{2015-09} \\
+    \ganttbar[progress=00, name=koflr]{KO fluorescence}{2015-08}{2015-09} \\
+    \ganttlinkedbar[progress=00, name=koo2]{KO O2 evolution}{2015-10}{2015-11} \\
+  \ganttset{bar incomplete/.append style={fill=red!40},
+    group/.append style={draw=black, fill=red},}
+  \ganttgroup{Aim 2: Expression}{2015-06}{2017-02} \\
+    \ganttbar[progress=00, name=oeclone]{Clone OEs}{2016-01}{2016-03} \\
+    \ganttbar[progress=00, name=rnagrow]{Grow KOs + OEs}{2016-04}{2016-06} \\
+    \ganttlinkedbar[progress=00, name=rnaprep]{RNA library prep}{2016-07}{2016-09} \\
+    \ganttbar[progress=00, name=rnadev]{Develop analysis}{2015-06}{2015-07} \\
+    \ganttbar[progress=00, name=rnaanal]{Analyze reads}{2016-12}{2017-02} \\
+  \ganttset{bar incomplete/.append style={fill=blue!40},
+  group/.append style={draw=black, fill=blue},}
+  \ganttgroup{Aim 3: Binding sites}{2016-01}{2017-05} \\
+    \ganttbar[progress=00, name=chipgrow]{Grow KOs + OEs}{2016-04}{2016-06} \\
+    \ganttlinkedbar[progress=00, name=chipprep]{ChIP library prep}{2016-08}{2016-12} \\
+    \ganttbar[progress=00, name=chipdev]{Develop analysis}{2016-01}{2016-02} \\
+    \ganttbar[progress=00, name=chipanal]{Analyze reads}{2017-03}{2017-05}
+  % misc links
+  \ganttset{progress label text={}}
+  \ganttlink[]{oeclone}{rnagrow}
+  \ganttlink[link mid=0.082]{oeclone}{chipgrow}
+  \ganttlink[]{rnaprep}{rnaanal}
+  \ganttlink[link mid=0.25]{kover}{koflr}
+  \ganttlink[link mid=0.75]{kogro}{koo2}
+  \ganttlink[link mid=0.55]{koo2}{oeclone}
+  \ganttlink[link mid=0.55]{rqpcr}{oeclone}
+  \ganttlink[]{chipprep}{chipanal}
+  \ganttlink[link mid=0.938]{rnadev}{rnaanal}
+  \ganttlink[link mid=0.915]{chipdev}{chipanal}
 \end{ganttchart}
+
 \end{center}
 \end{figure}
 
@@ -83,6 +77,9 @@ group peaks={}{}{.2}]{20}
 - **Milestone - 3:** Es existiert eine einfache Implementation eines Dynamic Scene Graph (anhängig vom Projektfortschritt).
 
 - **Final Presentation:** Finale Abgabe / Präsentation.
+
+## Grobplanung
+balalalal [@Cousteau1963].
 ## Appendix
 
 
