@@ -5,7 +5,6 @@ pdf: prepare
 	@pwd
 	@pandoc -s -N --template=assets/latex/template.latex \
     thesis.md --output thesis.pdf \
-		--latex-engine=xelatex \
 		--bibliography=assets/references.bib \
 		--csl assets/ieee.csl \
 		--highlight-style=tango \
