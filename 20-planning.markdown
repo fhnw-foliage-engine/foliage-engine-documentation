@@ -3,13 +3,13 @@
 
 \begin{figure}[!htb]
 \begin{center}
+
 \begin{ganttchart}[
 y unit title=0.4cm,
 y unit chart=0.5cm,
 vgrid,hgrid,
 title label anchor/.style={below=-1.6ex},
-title left shift=.05,
-title right shift=-.05,
+title left shift=.05, title right shift=-.05,
 title height=1,
 bar/.style={fill=gray!50},
 incomplete/.style={fill=white},
@@ -22,10 +22,10 @@ group height=.3
 
 %labels
 \gantttitle{IP5 - Foliage Engine}{20} \\
-\gantttitle{September}{4} 
-\gantttitle{October}{4} 
-\gantttitle{November}{4} 
-\gantttitle{Dezember}{4} 
+\gantttitle{September}{4}
+\gantttitle{October}{4}
+\gantttitle{November}{4}
+\gantttitle{Dezember}{4}
 \gantttitle{Januar}{4} \\
 
 %tasks
@@ -37,8 +37,7 @@ group height=.3
 \ganttnewline
 \ganttnewline
 \ganttbar[progress=100]{Initial Analysis}{3}{4} \\
-\ganttnewline
-\ganttbar{Billboard - Initial}{5}{8} \\
+\ganttnewline \ganttbar{Billboard - Initial}{5}{8} \\
 \ganttmilestone{Milestone-1}{8}
 \ganttnewline
 \ganttnewline
@@ -54,13 +53,12 @@ group height=.3
 \ganttbar{Buffer}{18}{18} \\
 \ganttmilestone{Final Presentation}{18} \\
 
-%relations 
-\ganttlink{elem3}{elem4}
+%relations \ganttlink{elem3}{elem4}
 \ganttlink{elem4}{elem5}
 \ganttlink{elem5}{elem6}
 \ganttlink{elem5}{elem7}
 \ganttlink{elem6}{elem8}
-\ganttlink{elem7}{elem8}  
+\ganttlink{elem7}{elem8}
 \ganttlink{elem8}{elem9}
 \ganttlink{elem9}{elem10}
 \ganttlink{elem10}{elem11}
@@ -69,7 +67,6 @@ group height=.3
 \end{ganttchart}
 \end{center}
 \end{figure}
-
 
 ### Milestones
 
