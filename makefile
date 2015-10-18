@@ -6,7 +6,8 @@ pdf: prepare
 	@pandoc -s -N --template=assets/latex/template.latex \
     thesis.md --output thesis.pdf \
 		--latex-engine=xelatex \
-		--bibliography=references.bib \
+		--bibliography=assets/references.bib \
+		--csl assets/ieee.csl \
     --variable documentclass=article \
     --variable fontsize=13pt \
     --variable mainfont='Helvetica Neue' \
