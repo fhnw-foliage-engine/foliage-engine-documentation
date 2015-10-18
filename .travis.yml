@@ -5,7 +5,7 @@ addons:
     - pandoc
 
 before_install:
-  - tar -xf ./travis/texlive2015.tar -C /tmp
+- tar -xf ./travis/texlive2015.tar -C /tmp
 - chmod u+x ./travis/build.sh
 - chmod u+x ./travis/publish.sh
 
