@@ -1,10 +1,11 @@
 before_install:
 - sudo apt-get update -qq
 - sudo apt-get install -y pandoc
-- sudo apt-get install -y texlive-full
-- sudo apt-get install -y texlive-xetex
+- wget https://github.com/scottkosty/install-tl-ubuntu/raw/master/install-tl-ubuntu
+- chmod u+x ./install-tl-ubuntu
 - chmod u+x ./travis/build.sh
 - chmod u+x ./travis/publish.sh
+- sudo ./install-tl-ubuntu
 
 script: "./travis/build.sh"
 
