@@ -3,10 +3,10 @@
 
 \begin{figure}[!htb]
 \begin{center}
-
-\begin{ganttchart}[y unit title=0.4cm,
+\begin{ganttchart}[
+y unit title=0.4cm,
 y unit chart=0.5cm,
-vgrid,hgrid, 
+vgrid,hgrid,
 title label anchor/.style={below=-1.6ex},
 title left shift=.05,
 title right shift=-.05,
@@ -17,8 +17,8 @@ progress label text={},
 bar height=0.7,
 group right shift=0,
 group top shift=.6,
-group height=.3,
-group peaks={}{}{.2}]{20}
+group height=.3
+]{1}{20}
 
 %labels
 \gantttitle{IP5 - Foliage Engine}{20} \\
