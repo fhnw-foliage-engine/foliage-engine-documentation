@@ -6,7 +6,7 @@ addons:
 
 before_install:
 - tar -xf ./travis/texlive2015.tar -C /tmp
-- chmod u+x /tmp/texlive2015/x86_64-linux/*
+- ls /tmp/texlive2015/x86_64-linux/*
 - chmod u+x ./travis/build.sh
 - chmod u+x ./travis/publish.sh
 
