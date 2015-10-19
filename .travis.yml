@@ -9,6 +9,7 @@ before_install:
 # - tar -xf ./travis/texlive2015.tar -C /tmp
 - sudo apt-get install texlive-base
 - sudo apt-get install texlive-xetex
+- sudo apt-get install texlive-latex-extra
 - chmod u+x ./travis/build.sh
 - chmod u+x ./travis/publish.sh
 
