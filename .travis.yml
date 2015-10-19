@@ -7,7 +7,7 @@ addons:
 
 before_install:
 # - tar -xf ./travis/texlive2015.tar -C /tmp
-- sudo dpkg -i texlive-full-2015
+- sudo dpkg -i ./travis/texlive-full-2015.deb
 - sudo apt-get install -f
 - chmod u+x ./travis/build.sh
 - chmod u+x ./travis/publish.sh
