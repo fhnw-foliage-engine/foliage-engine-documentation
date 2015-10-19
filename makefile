@@ -5,9 +5,9 @@ pdf: prepare
 	@pandoc -s -N --template=assets/latex/template.latex \
     thesis.md --output thesis.pdf \
 		--latex-engine=xelatex \
-		#--bibliography=assets/references.bib \
-		#--csl assets/ieee.csl \
-		#--highlight-style=tango \#
+		--bibliography=assets/references.bib \
+		--csl assets/ieee.csl \
+		--highlight-style=tango \
 		--table-of-contents \
     --variable documentclass=article \
     --variable fontsize=13pt \
