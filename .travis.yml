@@ -1,11 +1,14 @@
-sudo: false # use containers
+# sudo: false # use containers
+sudo: required
 
 addons:
   apt_packages:
     - pandoc
 
 before_install:
-- tar -xf ./travis/texlive2015.tar -C /tmp
+# - tar -xf ./travis/texlive2015.tar -C /tmp
+- sudo dpkg -i texlive-full-2015
+- sudo apt-get install -f
 - chmod u+x ./travis/build.sh
 - chmod u+x ./travis/publish.sh
 
