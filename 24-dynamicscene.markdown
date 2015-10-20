@@ -1,3 +1,3 @@
 
-## Dynamic Scene Graph
+# Dynamic Scene Graph
 

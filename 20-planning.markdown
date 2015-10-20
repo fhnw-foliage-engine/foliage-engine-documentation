@@ -1,5 +1,5 @@
 
-## Grobplanung
+# Grobplanung
 
 \begin{figure}[!htb]
 \begin{center}
@@ -68,7 +68,7 @@ group height=.3
 \end{center}
 \end{figure}
 
-### Milestones
+## Milestones
 
 - **Milestone - 1:** Es existiert eine erste Version der Billboard Implementation in der Foliage Engine. Die Implementation ist unter Umständen noch nicht ganz fertig, jedoch mehrheitlich. Nachbesserungen (der Billboard Implementation) sowie eine Analyse der Octtree Implementation sollen bis zur Projektwoche vorgenommen werden.
 
