@@ -1,6 +1,9 @@
 
-## Grobplanung
-balalalal @bworld.
+## Analyse
+
+### Ist-Analyse 
+
+
 
 
 
