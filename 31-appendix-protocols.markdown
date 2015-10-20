@@ -30,20 +30,18 @@
 **Protokollpunkte / Themen**  
 
 - Besprechung der erledigten Arbeiten seit letzten Meeting.
-- Vorstellung der ersten Implementation der VertexShaderMaterials [^1] basierend auf dem Beispiel von Herr Bolzern @bolzernvertexshadermaterial.
+- Vorstellung der ersten Implementation der VertexShaderMaterials ^[[three.js Dokumentation: ShaderMaterial](http://threejs.org/docs/#Reference/Materials/ShaderMaterial)
+] basierend auf dem Beispiel von Herr Bolzern @bolzernvertexshadermaterial.
 - *Feedback: Bisherige Implementation verwendet Mesh; sollte aber Points verwenden.*
 
 **Pendenzenliste / Beschlüssee**  
 *Bis zum nächsten Meeting sind die folgenden Pendenzen zu erledigen:*
 
-1. Implementation unter der Verwendung von Points [^2]
+1. Implementation unter der Verwendung von Points ^[[three.js Dokumentation: Points](http://threejs.org/docs/#Reference/Objects/Points)]
 2. Starten mit der Dokumentation.
 
 **Sonstiges**  
 - *None*
-
-[^1]: [three.js Dokumentation: ShaderMaterial](http://threejs.org/docs/#Reference/Materials/ShaderMaterial)
-[^2]: [three.js Dokumentation: Points](http://threejs.org/docs/#Reference/Objects/Points)
 
 \pagebreak
 
@@ -56,7 +54,7 @@
 **Protokollpunkte / Themen**  
 
 - Besprechung der erledigten Arbeiten seit letzten Meeting.
-- Vorstellung der Points Implementation. [^1]:
+- Vorstellung der Points Implementation. ^[[Commit auf Github]()]
 
 **Pendenzenliste / Beschlüssee**  
 *Bis zum nächsten Meeting sind die folgenden Pendenzen zu erledigen:*
@@ -67,7 +65,6 @@
 **Sonstiges**  
 - *None*
 
-[^1]: [Commit auf Github]()
 
 \pagebreak
 
