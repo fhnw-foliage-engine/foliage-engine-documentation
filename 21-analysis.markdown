@@ -28,12 +28,26 @@ Will man nun die Engine testen muss man im Hauptordner einen Server starten und 
 		models
 			grass
 				2.5D
+					models
+					bilder
 				lod0
+					models
+					bilder
 				lod1
+					models
+					bilder
 				lod2
+					models
+					bilder
 				lod3
+					models
+					bilder
 				lod4
+					models
+					bilder
 				lod5
+					models
+					bilder
 		readme.txt
 		scenes
 			2.5d.html
@@ -43,14 +57,13 @@ Will man nun die Engine testen muss man im Hauptordner einen Server starten und 
 			phd.html
 			unity.html
 		textures
-			grass_normal.phg
+			grass_normal.png
 			grass.png
 			lod2d_normal.png
 			lod2d.png
 			sand_clean_bumpy_01_b_normal.png
 			sand_clean_bumpy_01_b.png
 			skybox
-				
 		three.foliageengine.js
 
 ###Performance
