@@ -18,52 +18,52 @@ Im "textures" Ordner sind verschidene Texturen für Gras und Terrain vorhanden.
 Schliesslich haben wir auch noch das "index.html" und die "three.foliageengine.js" darin enthalten, die die finale Version repräsentiert.  
 Will man nun die Engine testen muss man im Hauptordner einen Server starten und kann dann mittels Browser entwerder das "index.html" oder eines der anderen Beispiele in "scenes" aufrufen.
 
-	Foliage-Engine
+	foliageengine/
 		index.html
-		js
+		js/
 			PointerLockControls.js
 			three.js
 			three.min.js
 			threex.renderstats.js
-		models
-			grass
-				2.5D
+		models/
+			grass/
+				2.5D/
 					models
 					bilder
-				lod0
+				lod0/
 					models
 					bilder
-				lod1
+				lod1/
 					models
 					bilder
-				lod2
+				lod2/
 					models
 					bilder
-				lod3
+				lod3/
 					models
 					bilder
-				lod4
+				lod4/
 					models
 					bilder
-				lod5
+				lod5/
 					models
 					bilder
 		readme.txt
-		scenes
+		scenes/
 			2.5d.html
 			32.52d.html
 			50fps.html
 			demo.html
 			phd.html
 			unity.html
-		textures
+		textures/
 			grass_normal.png
 			grass.png
 			lod2d_normal.png
 			lod2d.png
 			sand_clean_bumpy_01_b_normal.png
 			sand_clean_bumpy_01_b.png
-			skybox
+			skybox/
 		three.foliageengine.js
 
 ###Performance
