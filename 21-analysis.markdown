@@ -75,6 +75,32 @@ Will man nun die Engine testen muss man im Hauptordner einen Server starten und 
 			skybox/
 		three.foliageengine.js
 
+###Debugging
+Um den Code besser zu verstehen und später auch einfacher die Veränderungen die wir programmieren zu erkennen, haben wir uns eine Debugversion von der Foliage-Engine gebaut. Dabei haben wir den verschiedenen LOD eine andere Farbe gegeben.  
+
+    // Register new loaded LOD Level
+    var mesh;
+    if(level == 1){
+      mesh = new THREE.Mesh(new THREE.BufferGeometry().fromGeometry(geometry),
+      //new THREE.MeshFaceMaterial(material));
+      new THREE.MeshBasicMaterial({color : 0xff0000}));
+    } else if(level == 2){
+      mesh = new THREE.Mesh(
+      new THREE.BufferGeometry().fromGeometry(geometry),
+      new THREE.MeshBasicMaterial({color : 0x0000ff}));
+    } else if(level == 3){
+      mesh = new THREE.Mesh(
+      new THREE.BufferGeometry().fromGeometry(geometry),
+      new THREE.MeshBasicMaterial({color : 0x00ff00}));
+    } else {
+      mesh = new THREE.Mesh(
+      new THREE.BufferGeometry().fromGeometry(geometry),
+      new THREE.MeshBasicMaterial({color : 0x000000}));
+    }
+Dabei färbten wir alle Gras-Objekte im LOD1 Rot, im LOD2 Blau und im LOD3 Grün ein. Das letzte LOD liessen wir, da dort eh nur eine Textur geladen wird.  
+Zusätzlich haben wir noch die Distanz bei der das LOD wechseln soll verkürzt, damit wir alle 4 LOD auf einem Blick sehen können.  
+So können wir nun den Code verändern und sehen gleich die Wirkung davon. Auch lassen sich so leichter vorhandene Fehler finden.
+
 ###Performance
 
 ###Findings
