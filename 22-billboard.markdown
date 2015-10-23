@@ -38,8 +38,9 @@ Eigenes ShaderMaterial:
       "varying vec2 vUv;",
       "void main() {",
       "vUv = uv;",
-      "gl_Position = projectionMatrix * (modelViewMatrix * vec4(0.0, 0.0, 0.0, 1.0)",
-      "+ vec4(position.x, position.y, 0.0, 0.0));",
+      "gl_Position = projectionMatrix * ",
+      "(modelViewMatrix * vec4(0.0, 0.0, 0.0, 1.0) + ",
+      "vec4(position.x, position.y, 0.0, 0.0));",
       "}"
       ].join("\n");
     var fragmentShader = [
