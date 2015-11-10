@@ -82,6 +82,9 @@ Ergebnis mit den Points-Objekten:
 
 ![Resultat mit ShaderMaterial](assets/images/billboardSample.png)
 
+## Fail
+commit "a9446a61b578dec97f7f09f9617f28b7c59d3917"
+
 ## Schritt 4) Billboard/Sprite-Kombination
 TDB
 
