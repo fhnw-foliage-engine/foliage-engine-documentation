@@ -10,16 +10,10 @@ Als Ausgangslage verwendeten wir den Octree von [collinhover](https://github.com
 
 ###Update des LOD
 OctreeNodes sind die Objekte welche alle notwendigen Informationen und die Kinder enthalten. Mit ihnen wird der eigentliche Octree aufgebaut.  
-Um nun unsere LOD-Überprüfungen auf dem OctreeNode machen zu können, müssen wir ihn um ein paar Informationen ergänzen.
+Um nun unsere LOD-Überprüfungen auf dem OctreeNode machen zu können, müssen wir ihn um einen Parameter ergänzen.
 
 ```javascript
-// level of detail
-
-this.utilLevelOfDetail = {
-   // LOD of this node
-   // if not undefined
-   nodeLevelOfDetail: undefined
-};
+this.levelOfDetail = parameters.levelOfDetail ? parameters.levelOfDetail : 0;
 ```
 Die Informationen über den besetzten Raum von jedem Node können wir mit folgenden Attributen enrhalten:
 
@@ -172,13 +166,23 @@ updateLevelOfDetail: function ( fromPosition ) {
 	} else {
 
 		// we need to go deeper
-		var i, l;
-		for ( i = 0, l = this.nodesIndices.length; i < l; i ++ ) {
-			this.nodesByIndex[ this.nodesIndices[ i ] ].updateLevelOfDetail( fromPosition );
+		var i, l; l = this.nodesIndices.length;
+		if(l > 0){
+			for ( i = 0; i < l; i ++ ) {
+				this.nodesByIndex[ this.nodesIndices[ i ] ].updateLevelOfDetail( fromPosition );
+			}
+		} else {				var k = this.objects.length;
+			for(i = 0; i < k; i++) {
+				var obj = this.objects[i].object;
+				var dist = this.calculateDistance(obj.position.x, obj.position.z, fromPosition.x, fromPosition.z);
+				var lod = this.calculateLevelOfDetailFromDistance(dist);
+				obj.dispatchEvent( {		
+					type: 'changed',
+					level: lod
+				});
+			}
 		}
-
 	}
-
 }
 ```
 ####Event
@@ -213,7 +217,7 @@ dispatchEvent: function (){
 }
 ```
 ###Ergebnis
-####Test
+####Test 1
 Um zu sehen ob sich unser Octree so verhaltet wie erwartet, haben wir eine das Example welches schon in der **Ausgangslage** gezeigt wurde, an unsere Situation angepasst. Wir lassen alle Punkte nur noch auf einer Ebene generieren und definierten eine Callback-Funktion die beim Auslösen des Events die Farbe der Objekte anhand des entsprechenden Levels ändert.
 
 ```javascript
@@ -230,3 +234,31 @@ levelOfDetailChangedCallback: function ( event ) {
 
 Ausgehend von der weissen Linie, die unsere Cameraposition imitiert, erwarten wir einen Viertelkreis in Rot und der Rest sollte Blau sein. Diesen Erfolg hatten wir leider nicht. Wie man auf dem Bild erkennen kann, sieht man Zwar die Kreisform, die wir von unserem Octree erwarten, es hat jedoch noch grüne Bereiche, die nie ein Update erhalten und dann einen grossen roten Bereich, der eigentlich Blau sein sollte.
 ![Erstes Octree Resultat](assets/images/OctreeResult1.png)
+
+####Test 1
+Dabei erkannten wir, dass wir beim LOD überprüfen stetig beim OctreeNodes bleiben und diese immer eine Fläche repräsentieren. somit sind die Objekte welche sich an der Grenze des Ranges befinden immer undefiniert. Dies konnten wir später im Sourcecode beheben. Weiter hatten wir auch noch das Problem, dass Updates mit dem Event "undefined" ausgelöst wurden. Dabei erkannten wir das wir bisher die Octreeeigenschaft von Split und Expand vernachlässigt hatten. Dies konnte dann jedoch einfach gelöst werden.  
+Bei Expand mussten wir beim neu erstellten Octree den LOD default auf `undefined`setzen.
+
+```javascript
+parent = new THREE.OctreeNode( {
+	tree: this.tree,
+	position: position,
+	radius: radiusParent,
+	levelOfDetail: undefined
+} );
+```
+Beim Fall von einem split, wird in der funktion eine branch funktion aufgerufen, die dann ein neuen OctreeNode erstellt, auch dort konnten wir das Problem einfach beheben, indemm der neue Node einfach den LOD vom alten Node übernimmt.
+
+```javascript
+node = new THREE.OctreeNode( {
+	tree: this.tree,
+	parent: this,
+	position: position,
+	radius: radius,
+	indexOctant: indexOctant,
+	levelOfDetail: this.levelOfDetail
+} );
+```
+
+Nun haben wir ein erwartetes Verhalten als Ergebnis erhalten.
+![Resultat mit funktionierenden Ranges](assets/images/octreeWithWorkingRanges.png)
