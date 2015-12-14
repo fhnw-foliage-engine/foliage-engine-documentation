@@ -72,9 +72,9 @@ group height=.3
 
 - **Milestone - 1:** Es existiert eine erste Version der Billboard Implementation in der Foliage Engine. Die Implementation ist unter Umständen noch nicht ganz fertig, jedoch mehrheitlich. Nachbesserungen (der Billboard Implementation) sowie eine Analyse der Octtree Implementation sollen bis zur Projektwoche vorgenommen werden.
 
-- **Milstone - 2:** Es existiert eine verbesserte Version der Billboard Implementation, des weitern wurde die Octtree Implementation analysiert. Sofern die Resultate befriedigend sind, kann mit der Analyse der Dynamic Scene Graph Implementation in der Projektwoche gestartet werden.
+- **Milstone - 2:** Es existiert eine verbesserte Version der Billboard Implementation. Des Weiteren wurde die Octtree Implementation analysiert. Sofern die Resultate befriedigend sind, kann mit der Analyse der Dynamic Scene Graph Implementation in der Projektwoche gestartet werden.
 
-- **Milestone - 3:** Es existiert eine einfache Implementation eines Dynamic Scene Graph (anhängig vom Projektfortschritt).
+- **Milestone - 3:** Es existiert eine einfache Implementation eines Dynamic Scene Graph (abhängig vom Projektfortschritt).
 
 - **Final Presentation:** Finale Abgabe / Präsentation.
 
@@ -82,7 +82,7 @@ group height=.3
 
 ## Aktualisierte Grobplanung
 
-Auf Grund mehrerer Faktoren musste die Grobplanung grundsätzlich angepasst werden. Der Hauptgrund war dabei die Feststellung, dass die bestehende Foliage Engine schlecht erweiterbar ist (undurchsichtige Abhängigkeiten, hohe Komplexität der Implementation, Codequalität nicht zufriedenstellend etc.). Aus diesem Grund wurde zwischen dem Milestone 1 und Milestone 2 entschieden ein Example von Grund auf neu zu erstellen. Mit dieser Massnahme wurde sichergestellt, dass wir die Octree Erweiterung vornehmen können. Dabei wurde vereinbart, dass wir bestehende sinnvolle Konzepte und Überlegungen der Foliage Engine übernehmen. Der Milestone 3 wurde dabei mehrheitlich entfernt. Ziel ist jedoch, in unserer Implementation diese Erweiterbarkeit zu beachten.
+Aufgrund von mehreren Faktoren musste die Grobplanung grundsätzlich angepasst werden. Der Hauptgrund war dabei die Feststellung, dass die bestehende Foliage Engine schlecht erweiterbar ist (undurchsichtige Abhängigkeiten, hohe Komplexität der Implementation, Codequalität nicht zufriedenstellend etc.). Aus diesem Grund wurde zwischen Milestone 1 und Milestone 2 entschieden, ein Example von Grund auf neu zu erstellen. Mit dieser Massnahme stellten wir sicher, dass wir die Octree Erweiterung vornehmen können. Es wurde vereinbart, dass wir bestehende sinnvolle Konzepte und Überlegungen der Foliage Engine übernehmen. Der Milestone 3 wurde dabei mehrheitlich entfernt. Ziel ist jedoch, in unserer Implementation diese Erweiterbarkeit zu beachten.
 
 \begin{figure}[!htb]
 \begin{center}
@@ -154,7 +154,7 @@ group height=.3
 
 - **Milestone - 1:** Es existiert eine erste Version der Billboard Implementation in der Foliage Engine. Die Implementation ist unter Umständen noch nicht ganz fertig, jedoch mehrheitlich. Nachbesserungen (der Billboard Implementation) sowie eine Analyse der Octtree Implementation sollen bis zur Projektwoche vorgenommen werden.
 
-- **Milstone - 2:** Das Ziel ist es die beiden Teile (Billboard und Octree) in ein gemeinsames Beispiel zusammenzuführen.
+- **Milstone - 2:** Das Ziel ist es, die beiden Teile (Billboard und Octree) in ein gemeinsames Beispiel zusammenzuführen.
 
 - **Final Presentation:** Finale Abgabe / Präsentation.
 
